@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: service-eureka
+server:
+  port: 9010
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:9010/eureka/
+
+hystrix:
+  metrics:
+    enabled: true
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000

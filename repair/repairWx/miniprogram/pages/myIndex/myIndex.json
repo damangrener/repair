@@ -1,0 +1,9 @@
+
+{
+  "navigationBarBackgroundColor": "#00FFFF",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "T头条",
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light",
+  "usingComponents": {}
+}

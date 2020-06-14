@@ -1,0 +1,66 @@
+{
+  "pages": [
+    "pages/loginIn/loginIn",
+    "pages/repair/repair",
+    "pages/orderLog/orderLog",
+    "pages/jtc/jtc",
+    "pages/repairOrder/repairOrder",
+    "pages/myIndex/myIndex",
+    "pages/menu/menu",
+    "pages/report/report",
+    "pages/uploadArticle/uploadArticle",
+    "pages/register/register",
+    "pages/index/index",
+    "pages/userConsole/userConsole",
+    "pages/storageConsole/storageConsole",
+    "pages/databaseGuide/databaseGuide",
+    "pages/addFunction/addFunction",
+    "pages/deployFunctions/deployFunctions",
+    "pages/chooseLib/chooseLib",
+    "pages/openapi/openapi",
+    "pages/openapi/serverapi/serverapi",
+    "pages/openapi/callback/callback",
+    "pages/openapi/cloudid/cloudid",
+    "pages/im/im",
+    "pages/im/room/room"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#00FFFF",
+    "navigationBarTitleText": "WTF空调维修平台",
+    "navigationBarTextStyle": "black"
+  },
+  "networkTimeout": {
+    "request": 10000
+  },
+  
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/myIndex/myIndex",
+        "iconPath": "images/tt.png",
+        "selectedIconPath": "images/se-tt.png",
+        "text": "T头条"
+      },
+      {
+        "pagePath": "pages/repair/repair",
+        "iconPath": "images/wx.png",
+        "selectedIconPath": "images/se-wx.png",
+        "text": "维修"
+      },
+      {
+        "pagePath": "pages/menu/menu",
+        "iconPath": "images/user.png",
+        "selectedIconPath": "images/se-user.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}

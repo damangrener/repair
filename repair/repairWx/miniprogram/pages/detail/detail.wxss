@@ -1,0 +1,99 @@
+/* pages/detail/detail.wxss */
+@import "/wxParse/wxParse.wxss";
+.clearfix {
+  clear: both;
+}
+
+.box {
+  width: 100%;
+  height: auto;
+}
+
+.Sr {
+  width: 100%;
+}
+
+.box-content {
+  width: 100%;
+  padding: 30rpx 25rpx;
+  box-sizing: border-box;
+  height: auto;
+}
+
+.title {
+  font-size: 40rpx;
+  color: #333;
+  font-weight: 900;
+}
+.author {
+  display:flex;
+  width:100%;
+  min-height:70rpx;
+  /* background:yellow; */
+  margin:30rpx 0;
+}
+.left {
+  display:flex;
+  align-items: center;
+  flex: 2;
+  /* background:#ddd; */
+}
+.left .Img {
+  width:58rpx;
+  height:70rpx;
+  vertical-align: middle;
+  border-radius: 50%;
+}
+.right {
+  flex: 1;
+  /* background: red; */
+}
+.author-detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left:10rpx;
+}
+.detail-top {
+  display: flex;
+}
+.h1 {
+  font-size:20rpx;
+  color:#333;
+}
+.hop {
+  font-size:16rpx;
+  color:#fff;
+  padding:0 3rpx;
+  line-height:28rpx;
+  background:#E6645F;
+  border-radius:10%;
+  margin-left:10rpx;
+}
+.detail-bottom {
+  display: flex;
+  padding-top:5rpx;
+}
+.day,.time {
+  font-size:18rpx;
+  color:#A9A9A9
+}
+.time {
+  padding-left:5rpx;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  justify-content: space-around
+}
+.right .add,.cup {
+  font-size:22rpx;
+  padding:5rpx;
+  border:2rpx solid #e0e0e0;
+}
+/*内容设置开始  */
+.wxParse-inline {
+  font-size:28rpx;
+}
+/*内容设置结束  */

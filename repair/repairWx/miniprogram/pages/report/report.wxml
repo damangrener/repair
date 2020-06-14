@@ -1,0 +1,64 @@
+<!--pages/report/report.wxml-->
+<view class="section1">
+  <view class="section__title">请选择空调样式:</view>
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class="picker">
+      当前选择：{{array[index]}}
+    </view>
+  </picker>
+</view>
+<view class="line"></view>
+
+<view class="section">
+  <view class="section__title">请选择预约上门日期:</view>
+  <picker mode="date" value="{{date}}" start="2020-05-31" end="2021-09-01" bindchange="bindDateChange">
+    <view class="picker">
+      当前选择: {{date}}
+    </view>
+  </picker>
+</view>
+<view class="line"></view>
+
+<view class="section">
+  <view class="section__title">具体时间:</view>
+  <picker mode="time" value="{{time}}" start="09:01" end="21:01" bindchange="bindTimeChange">
+    <view class="picker">
+      当前选择: {{time}}
+    </view>
+  </picker>
+</view>
+<view class="line"></view>
+<view class="section">
+  <view class="section__title">请选择地址:</view>
+  <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+    <view class="picker">
+      当前选择：{{region[0]}}，{{region[1]}}，{{region[2]}}
+    </view>
+  </picker>
+</view>
+<view class="section">
+  <view class="section__title">请输入具体地址:</view>
+  <view class="line"></view>
+  <textarea style="height: 3em" selection-start="-1" selection-end="-1" cursor="-1" bindinput="detailInput" value="{{detail}}">
+
+  </textarea>
+  <view class="line"></view>
+</view>
+<view class="section">
+  <view class="section__title">请输入故障描述:</view>
+  <view class="line"></view>
+  <textarea style="height: 3em" selection-start="-1" selection-end="-1" cursor="-1" bindinput="descInput" value="{{desc}}">
+
+  </textarea>
+  <view class="line"></view>
+</view>
+<view class="section">
+  <view class="section__title">请输入联系手机号码:</view>
+  <input bindinput="phoneInput" value="{{phone}}"></input>
+</view>
+<view class="line"></view>
+<view class="loginBtnView">
+
+  <button class="loginBtn" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="report">上报维修单</button>
+
+</view>

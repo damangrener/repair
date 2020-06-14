@@ -1,0 +1,46 @@
+<!--pages/orderLog/orderLog.wxml-->
+<view class="a">
+  <view class="b" wx:if="{{orderVo!=''}}">
+    <view>服务人员信息</view>
+    <view>姓名：{{orderVo.name}}</view>
+    <view>联系方式：{{orderVo.phone}}</view>
+  </view>
+  <view class="c">
+    <view>
+      <text class="status1">订单生成</text>
+      <text class="status2">分派工程师</text>
+      <text class="status3">上门维修中</text>
+      <text class="status4">已完成</text>
+    </view>
+
+    <view>
+      <image class="jxz" src="{{img1}}"></image>
+      <image class="jxz" src="{{img2}}"></image>
+      <image class="jxz" src="{{img3}}"></image>
+      <image class="jxz" src="{{img4}}"></image>
+      <view class="line"></view>
+    </view>
+  </view>
+  <view class="d" wx:if="{{order4!=''}}">
+    <view>完成时间：{{order4.createTime}}</view>
+    <view>状态：{{order4.statusValue}}</view>
+    <view class="line1"></view>
+  </view>
+  <view class="d" wx:if="{{order3!=''}}">
+    <view>实际上门时间：{{order3.createTime}}</view>
+    <view>状态：{{order3.statusValue}}</view>
+    <view class="line1"></view>
+  </view>
+  <view class="d" wx:if="{{order2!=''}}">
+    <view>已为您分派工程师：{{orderVo.name}}</view>
+    <view>联系方式：{{orderVo.phone}}</view>
+    <view>时间：{{order2.createTime}}</view>
+    <view>状态：{{order2.statusValue}}</view>
+    <view class="line1"></view>
+  </view>
+  <view class="d" wx:if="{{order1!=''}}">
+    <view>维修单创建时间：{{order1.createTime}}</view>
+    <view>状态：{{order1.statusValue}}</view>
+    <view class="line1"></view>
+  </view>
+</view>

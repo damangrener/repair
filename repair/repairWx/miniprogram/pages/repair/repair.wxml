@@ -1,0 +1,18 @@
+<!--pages/repair/repair.wxml-->
+<view class='pageBox pageTwo'>
+  <swiper class='swiperClass' autoplay indicator-color="#a39f99" indicator-active-color="#f49641" indicator-dots  interval="2000" duration="1000" previous-margin="60px" next-margin="60px" circular bindchange="bindchange" style='height: {{swiperHeight}}px'>
+  <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image {{swiperIdx == index ? 'active' : 'quiet'}}" mode='aspectFill'></image>
+    </swiper-item>
+  </block>
+ </swiper>
+</view>
+<navigator bindtap="report" class="sb1" url="../report/report" hover-class="navigator-hover">
+<button plain="true" class="sb"><image class="nameImage" src="cloud://wtf-qw2i7.7774-wtf-qw2i7-1301635625/cloudImg/sb.png"></image></button><text class="sb2">维修上报</text></navigator>
+
+<navigator class="sb3" url="../repairOrder/repairOrder" hover-class="navigator-hover">
+<button plain="true" class="sb"><image class="nameImage" src="cloud://wtf-qw2i7.7774-wtf-qw2i7-1301635625/cloudImg/wxd.png"></image></button><text class="sb2">维修单</text></navigator>
+
+<!-- <navigator class="sb4" url="../repairOrder/repairOrder" hover-class="navigator-hover">
+<button plain="true" class="sb"><image class="nameImage" src="cloud://wtf-qw2i7.7774-wtf-qw2i7-1301635625/cloudImg/jc.png"></image></button><text class="sb5">进场</text></navigator> -->

@@ -1,0 +1,30 @@
+<!--pages/repairOrder/repairOrder.wxml-->
+<view wx:if="{{orders.length>0}}">
+
+  <view class="aaa" wx:for="{{orders}}" wx:for-index="{{bindex}}">
+    <label class="repairOrder">单号：{{item.repairOrder}}</label>
+    <label class="status">状态：{{item.statusValue}}</label>
+    <view>
+      <label class="createTime">创建时间：{{item.createTime}}</label>
+      <navigator wx:if="{{role==1}}" url="../jtc/jtc?order={{item.repairOrder}}&address={{item.address}}&appointTime={{item.appointTime}}" class="content-new">
+        <label class="detail" data-order="{{item.repairOrder}}">查看详情</label>
+      </navigator>
+      <navigator wx:if="{{role==2}}" url="../orderLog/orderLog?order={{item.repairOrder}}" class="content-new">
+        <label class="detail" data-order="{{item.repairOrder}}">查看详情</label>
+      </navigator>
+      <view wx:if="{{role==0}}" class="fenpai">请分派维修工程师
+      <picker bindchange="bindPickerChange" value="{{a}}" range="{{array}}" range-key="name">
+        <view class="fenpai">
+          当前选择：{{array[a].name}}
+        </view>
+        
+      </picker>
+      <button bindtap="fenpai" data-order="{{item.repairOrder}}" data-acc="{{array[a].account}}">点击分派</button>
+      </view>
+    </view>
+  </view>
+  <view class="line"></view>
+</view>
+
+
+<view wx:else> 你的账号当前无订单哟 </view>

@@ -1,0 +1,1 @@
+package com.wtf.service.constant;/** * @author wangtengfei * @since 2020/4/27 9:43 */public class SerConstant {    private static final String QUERY_FAIL="查询失败";    private static final String UPDATE_FAIL="修改失败";}

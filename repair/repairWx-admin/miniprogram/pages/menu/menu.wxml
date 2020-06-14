@@ -1,0 +1,44 @@
+
+<view class="menu">
+<view class="inputView">
+
+  <label class="loginLab">您的账号：{{account}}</label>
+</view>
+<view class="line"></view>
+
+<view class="inputView" wx:if="{{role ==0}}">
+  <label class="loginLab">您的身份：管理员</label>
+</view>
+<view class="inputView" wx:if="{{role ==1}}">
+<label class="loginLab">您的身份：维修攻城狮</label>
+</view>
+<view class="inputView" wx:if="{{role ==2}}">
+<label class="loginLab" wx:if="{{role ==2}}">您的身份：上帝</label>
+</view>
+
+
+<view class="inputView">
+<view wx:if="{{role ==0}}">
+<view class="line"></view> <label class="loginLab" bindtap="getrepairOrders">上传文章</label> </view> 
+</view>
+<view class="line"></view>
+
+<view class="inputView">
+<view wx:if="{{role ==2}}"> <label class="loginLab" bindtap="getrepairOrders">查看维修单</label> </view> 
+</view>
+
+<view class="line"></view></view>
+<view wx:if="{{show%2 ==1}}">
+<view wx:for="{{order}}">
+
+<view class="aaa" wx:if="{{order !=null}}">
+<label class="repairOrder">单号：{{item.repairOrder}}</label> 
+<label class="status">状态：{{item.statusValue}}</label> 
+<view><label class="createTime">创建时间：{{item.createTime}}</label> 
+<label class="detail" data-order="{{item.repairOrder}}"bindtap="getDetail">查看详情</label> </view>
+<view class="line"></view>
+</view>
+</view>
+
+<view class="line"></view>
+</view>

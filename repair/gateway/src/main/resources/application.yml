@@ -1,0 +1,43 @@
+spring:
+  application:
+    name: service-gateway
+server:
+  port: 9020
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:9010/eureka/
+zuul:
+  sensitiveHeaders: null
+  host:
+    connect-timeout-millis: 10000
+    socket-timeout-millis: 60000
+  #prefix: /wtf
+#  ignored-services: "*"
+  routes:
+    api-user:
+      path: /api-user/**
+      serviceId: api-user
+    api-service:
+      path: /api-service/**
+      serviceId: api-service
+    api-article:
+      path: /api-article/**
+      serviceId: api-article
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 280000
+
+ribbon:
+  ConnectTimeout: 60000
+  ReadTimeout: 60000
+
+jwt:
+  config:
+    key: wtf_key
+    expirationTime: 3600000

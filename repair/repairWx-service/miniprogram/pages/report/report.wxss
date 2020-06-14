@@ -1,0 +1,54 @@
+/* pages/report/report.wxss */
+
+.section {
+  margin-top: 20px;
+  margin-left: 50px;
+}
+
+.section1 {
+  margin-top: 50px;
+  margin-left: 50px;
+}
+
+.picker {
+  margin-left: 25px;
+}
+
+.textarea-wrp {
+  padding: 0 25rpx;
+  background-color: #fff;
+}
+.line { 
+ width: 100%; 
+ height: 1px; 
+ background-color: #cccccc; 
+ margin-top: 5px;
+ margin-bottom: 5px;
+} 
+.section__title{
+  margin-top: 10px;
+}
+.loginBtnView { 
+
+ width: 100%; 
+
+ height: auto; 
+
+ background-color: #f2f2f2; 
+
+ margin-top: 0px; 
+
+ margin-bottom: 0px; 
+
+ padding-bottom: 0px; 
+
+}
+.loginBtn { 
+
+ width: 80%; 
+
+ background-color:#ffcc33;
+
+ margin-top: 35px; 
+
+}

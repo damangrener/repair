@@ -1,0 +1,42 @@
+spring:
+  application:
+    name: api-service
+  datasource:
+    class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://47.97.40.191:3306/order?serverTimezone=Asia/Shanghai&&characterEncoding=utf-8
+    username: root
+    password: root
+    hikari:
+      minimum-idle: 3
+      maximum-pool-size: 10
+      max-lifetime: 30000
+      connection-test-query: SELECT 1
+server:
+  port: 9092
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:9010/eureka/
+
+feign:
+  hystrix:
+    enabled: true #fallback可以展示
+
+mybatis:
+  mapper-locations: classpath:/mapper/*.xml
+  type-aliases-package: com.wtf.service.mapper
+
+jwt:
+  config:
+    key: wtf_key
+    expirationTime: 3600000
+
+hystrix:
+  metrics:
+    enabled: true
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000

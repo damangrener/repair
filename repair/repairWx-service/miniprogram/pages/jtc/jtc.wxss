@@ -1,0 +1,41 @@
+/* pages/jtc/jtc.wxss */
+
+.loginBtn {
+  width: 80%;
+  background-color: #fc3;
+  margin-top: 35px;
+}
+
+.loginBtnView {
+  width: 100%;
+  height: auto;
+  /* background-color: white;  */
+  margin-top: 20px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+.jcTime {
+  margin-left: 100px;
+}
+
+.order, .over, .wxTime {
+  margin-top: 30px;
+  margin-left: 100px;
+}
+
+.inputText {
+  flex: block;
+  text-align: left;
+  margin-left: 60px;
+  margin-top: 10px;
+  color: #ccc;
+  font-size: 14px;
+  border-style: groove;
+  border-color: rgb(23, 228, 235);
+}
+
+.desc {
+  margin-top: 10px;
+  margin-left: 100px;
+}

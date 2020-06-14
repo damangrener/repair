@@ -1,0 +1,45 @@
+<!--pages/myIndex/myIndex.wxml-->
+<view class="new">
+  <view class="nav">
+    <view class="menu">
+      <!--使用scroll-view  -->
+      <scroll-view class="menu-nav" scroll-x>
+        <!-- 设置点击切换底边框 -->
+        <!--data-key 显示当前点击的索引  -->
+        <view bindtap="change" data-newMsgId="{{item.newMsgId}}" data-key="{{item.key}}" class="item {{cursor == item.key ? 'active' : '' }}" wx:for="{{navType}}" wx:key="index">{{item.name}}</view>
+      </scroll-view>
+    </view>
+    <view class="clearfix"></view>
+  </view>
+
+  <swiper class="content" style="height:{{scrollHeight}}px" current-item-id="{{cursor}}" bindchange="swiperChange" skip-hidden-item-layout="true" circular="true" duration="200">
+    <!-- 当前所在滑块的 item-id ，不能与 current 被同时指定 -->
+    <!-- swiper-item  当中有 item-id 是该 swiper-item 的标识符   -->
+    <swiper-item item-id="{{item.key}}" wx:for="{{navType}}" wx:key="index">
+      <!-- scroll-view 会发生触底事件bindscrolltolower -->
+      <scroll-view enable-back-to-top="true" scroll-y style="height:100%;bakcground:#fff" bindscrolltolower="scrollEnd" data-id="{{cursor}}">
+        <!-- 设置文章跳转 -->
+        <!-- 渲染新闻内容 -->
+        <!-- 跳转的时候进行传递当前文章的唯一标识  -->
+        <navigator url="../detail/detail?id={{value.id}}" class="content-new" wx:for="{{item.keep}}" wx:key="index" wx:for-item="value">
+          <view class="new-left">
+            <view class="title">{{value.title}}</view>
+            <view class="refer">{{value.createTime}}
+              <!-- <text style="padding-left:10rpx;">{{value.replyCount}}评论</text> -->
+            </view>
+          </view>
+          <view class="new-right">
+            <image mode="aspectFill" class="new-right-Img" src="{{value.imgPath}}"></image>
+          </view>
+        </navigator>
+        <!-- 渲染新闻内容结束 -->
+        <!-- 设置文章跳转结束  -->
+        <!--loading  -->
+        <view>
+          <image mode="aspectFit" class="lazy" src="../../images/lazy.gif"></image>
+        </view>
+        <!--loading end  -->
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+</view>

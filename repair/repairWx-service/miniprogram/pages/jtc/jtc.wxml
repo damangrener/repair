@@ -1,0 +1,29 @@
+<!--pages/jtc/jtc.wxml-->
+<view class="order">订单单号：{{order}}</view>
+<view class="order">机型:{{typeName}}</view>
+<view class="order">故障描述:{{descC}}</view>
+<view class="order">预约地址：{{address}}</view>
+<view class="order">预约时间：{{appointTime}}</view>
+<view class="loginBtnView">
+
+  <button class="loginBtn" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="present">进场签到</button>
+<view class="jcTime">签到时间：{{presentTime}}</view>
+</view>
+
+<view class="loginBtnView">
+
+  <button class="loginBtn" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="over">已完成</button>
+<view wx:if="{{over !=''}}" class="over">{{over}}</view>
+</view>
+<view class="loginBtnView">
+
+  <button class="loginBtn" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="cannotOver">无法解决</button>
+
+</view>
+
+<view class="loginBtnView">
+  <text class="desc">维修过程描述：</text>
+<textarea class="inputText" placeholder="描述一下维修过程吧" bindinput="descInput" value="{{account}}" adjust-position="true"></textarea>
+<button class="loginBtn" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="leave">退场签到</button>
+<view wx:if="{{wxTime !=''}}" class="wxTime">本次订单消耗时长：{{wxTime}}</view>
+</view>

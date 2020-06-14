@@ -1,0 +1,57 @@
+/* pages/repairOrder/repairOrder.wxss */
+/* pages/menu/menu.wxss */
+
+.loginLab {
+  margin: 15px 15px 15px 10px;
+  color: #545454;
+  font-size: 14px;
+  margin-left: 40px;
+}
+
+.inputView {
+  background-color: #fff;
+  line-height: 44px;
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  background-color: #ccc;
+  margin-top: 1px;
+}
+
+.menu {
+  margin-top: 100px;
+}
+
+.status{
+  margin-left: 45px;
+  color: #5c5c5c57;
+  font-size: 14px;
+}
+.repairOrder{
+  margin-left: 45px;
+  color: #5c5c5c57;
+  font-size: 14px;
+}
+.createTime{
+  margin-left: 45px;
+  margin-top: 15px;
+  color: #5c5c5c57;
+  font-size: 14px;
+}
+.aaa {
+  background-color: rgb(220, 243, 240);
+  line-height: 30px;
+}
+.detail {
+  margin-left: 40px;
+  color: #095efcaf;
+  font-size: 14px;
+}
+.fenpai{
+  color: red;
+  margin-left: 45px;
+  margin-top: 15px;
+  font-size: 16px;
+}

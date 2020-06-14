@@ -1,0 +1,80 @@
+<!--pages/register/register.wxml-->
+<!-- <view>你的账号为：{{randomAccount}}</view> -->
+<!-- <!你的账号为：> -->
+<view class="container">
+  <view class="line1"></view>
+  <view class="inputView">
+
+    <!-- <image class="nameImage" src="../../icons/u1.png"></image>  -->
+
+    <label class="loginLab">您的账号为</label>
+
+    <input class="inputText" value="{{randomAccount}}" bindinput="accountInput" disabled="true" />
+
+  </view>
+
+  <view class="line"></view>
+
+  <view class="inputView">
+
+    <!-- <image class="nameImage" src="../../icons/u1.png"></image>  -->
+
+    <label class="loginLab">手机号</label>
+
+    <input class="inputText" value="{{phone}}" placeholder="请输入手机号" bindinput="phoneInput" />
+
+  </view>
+
+  <view class="line"></view>
+
+  <view class="inputView">
+
+    <!-- <image class="nameImage" src="../../icons/u1.png"></image>  -->
+
+    <label class="loginLab">姓氏</label>
+
+    <input class="inputText" value="{{serName}}" placeholder="请输入姓氏" bindinput="serInput" />
+
+  </view>
+
+  <view class="line"></view>
+  <view class="inputView">
+
+    <!-- <image class="nameImage" src="../../icons/u1.png"></image>  -->
+
+    <label class="loginLab">名字</label>
+
+    <input class="inputText" value="{{name}}" placeholder="请输入名字" bindinput="nameInput" />
+
+  </view>
+
+  <view class="line"></view>
+
+  <!--密码-->
+
+  <view class="inputView">
+
+    <!-- <image class="keyImage" src="../../icons/u2.png"></image>  -->
+
+    <label class="loginLab">密码</label>
+
+    <input class="inputText" password="true" placeholder="请输入密码" bindinput="passwordInput" />
+
+  </view>
+  <view class="line"></view>
+
+  <view class="inputView">
+
+    <!-- <image class="keyImage" src="../../icons/u2.png"></image>  -->
+
+    <label class="loginLab">确认密码</label>
+
+    <input class="inputText" password="true" placeholder="请重复密码" bindinput="passwordInput1" />
+
+  </view>
+  <view class="registerBtnView">
+
+    <button class="registerBtn" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="register">立即注册</button>
+
+  </view>
+</view>

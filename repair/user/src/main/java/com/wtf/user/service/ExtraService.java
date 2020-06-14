@@ -1,0 +1,1 @@
+package com.wtf.user.service;import com.wtf.user.entity.vo.GoodServiceManVO;import java.util.List;/** * @author wangtengfei * @since 2020/4/27 20:51 */public interface ExtraService {    List<GoodServiceManVO> getAllStatusCount(Integer status);}

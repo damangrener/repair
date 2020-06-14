@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wtf.service.mapper.RepairStatusMapper">
+    <resultMap id="BaseResultMap" type="com.wtf.service.entity.po.RepairStatus">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="repair_order" property="repairOrder" jdbcType="VARCHAR"/>
+        <result column="serviceman_account" property="servicemanAccount" jdbcType="VARCHAR"/>
+        <result column="present_time" property="presentTime" jdbcType="TIMESTAMP"/>
+        <result column="repair_duration" property="repairDuration" jdbcType="VARCHAR"/>
+        <result column="repair_desc" property="repairDesc" jdbcType="VARCHAR"/>
+        <result column="repair_status" property="repairStatus" jdbcType="INTEGER"/>
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP"/>
+        <result column="create_by" property="createBy" jdbcType="VARCHAR"/>
+        <result column="update_time" property="updateTime" jdbcType="TIMESTAMP"/>
+        <result column="update_by" property="updateBy" jdbcType="VARCHAR"/>
+    </resultMap>
+    <sql id="Example_Where_Clause">
+        <where>
+            <foreach collection="oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" suffix=")" prefixOverrides="and">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach collection="criterion.value" item="listItem" open="(" close=")"
+                                             separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
+            </foreach>
+        </where>
+    </sql>
+    <sql id="Update_By_Example_Where_Clause">
+        <where>
+            <foreach collection="example.oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" suffix=")" prefixOverrides="and">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach collection="criterion.value" item="listItem" open="(" close=")"
+                                             separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
+            </foreach>
+        </where>
+    </sql>
+    <sql id="Base_Column_List">
+    id, repair_order, serviceman_account, present_time, repair_duration, repair_desc, 
+    repair_status, create_time, create_by, update_time, update_by
+  </sql>
+    <select id="selectByExample" resultMap="BaseResultMap"
+            parameterType="com.wtf.service.entity.po.RepairStatusExample">
+        select
+        <if test="distinct">
+            distinct
+        </if>
+        'true' as QUERYID,
+        <include refid="Base_Column_List"/>
+        from repair_status
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+        <if test="orderByClause != null">
+            order by ${orderByClause}
+        </if>
+    </select>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"/>
+        from repair_status
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete from repair_status
+        where id = #{id,jdbcType=INTEGER}
+    </delete>
+    <delete id="deleteByExample" parameterType="com.wtf.service.entity.po.RepairStatusExample">
+        delete from repair_status
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+    </delete>
+    <insert id="insert" parameterType="com.wtf.service.entity.po.RepairStatus">
+        <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into repair_status (repair_order, serviceman_account, present_time,
+        repair_duration, repair_desc, repair_status,
+        create_time, create_by, update_time,
+        update_by)
+        values (#{repairOrder,jdbcType=VARCHAR}, #{servicemanAccount,jdbcType=VARCHAR},
+        #{presentTime,jdbcType=TIMESTAMP},
+        #{repairDuration,jdbcType=VARCHAR}, #{repairDesc,jdbcType=VARCHAR}, #{repairStatus,jdbcType=INTEGER},
+        #{createTime,jdbcType=TIMESTAMP}, #{createBy,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP},
+        #{updateBy,jdbcType=VARCHAR})
+    </insert>
+    <insert id="insertSelective" parameterType="com.wtf.service.entity.po.RepairStatus">
+        <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into repair_status
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="repairOrder != null">
+                repair_order,
+            </if>
+            <if test="servicemanAccount != null">
+                serviceman_account,
+            </if>
+            <if test="presentTime != null">
+                present_time,
+            </if>
+            <if test="repairDuration != null">
+                repair_duration,
+            </if>
+            <if test="repairDesc != null">
+                repair_desc,
+            </if>
+            <if test="repairStatus != null">
+                repair_status,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="createBy != null">
+                create_by,
+            </if>
+            <if test="updateTime != null">
+                update_time,
+            </if>
+            <if test="updateBy != null">
+                update_by,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="repairOrder != null">
+                #{repairOrder,jdbcType=VARCHAR},
+            </if>
+            <if test="servicemanAccount != null">
+                #{servicemanAccount,jdbcType=VARCHAR},
+            </if>
+            <if test="presentTime != null">
+                #{presentTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="repairDuration != null">
+                #{repairDuration,jdbcType=VARCHAR},
+            </if>
+            <if test="repairDesc != null">
+                #{repairDesc,jdbcType=VARCHAR},
+            </if>
+            <if test="repairStatus != null">
+                #{repairStatus,jdbcType=INTEGER},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="createBy != null">
+                #{createBy,jdbcType=VARCHAR},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateBy != null">
+                #{updateBy,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <select id="countByExample" parameterType="com.wtf.service.entity.po.RepairStatusExample"
+            resultType="java.lang.Integer">
+        select count(*) from repair_status
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+    </select>
+    <update id="updateByExampleSelective" parameterType="map">
+        update repair_status
+        <set>
+            <if test="record.id != null">
+                id = #{record.id,jdbcType=INTEGER},
+            </if>
+            <if test="record.repairOrder != null">
+                repair_order = #{record.repairOrder,jdbcType=VARCHAR},
+            </if>
+            <if test="record.servicemanAccount != null">
+                serviceman_account = #{record.servicemanAccount,jdbcType=VARCHAR},
+            </if>
+            <if test="record.presentTime != null">
+                present_time = #{record.presentTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="record.repairDuration != null">
+                repair_duration = #{record.repairDuration,jdbcType=VARCHAR},
+            </if>
+            <if test="record.repairDesc != null">
+                repair_desc = #{record.repairDesc,jdbcType=VARCHAR},
+            </if>
+            <if test="record.repairStatus != null">
+                repair_status = #{record.repairStatus,jdbcType=INTEGER},
+            </if>
+            <if test="record.createTime != null">
+                create_time = #{record.createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="record.createBy != null">
+                create_by = #{record.createBy,jdbcType=VARCHAR},
+            </if>
+            <if test="record.updateTime != null">
+                update_time = #{record.updateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="record.updateBy != null">
+                update_by = #{record.updateBy,jdbcType=VARCHAR},
+            </if>
+        </set>
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause"/>
+        </if>
+    </update>
+    <update id="updateByExample" parameterType="map">
+        update repair_status
+        set id = #{record.id,jdbcType=INTEGER},
+        repair_order = #{record.repairOrder,jdbcType=VARCHAR},
+        serviceman_account = #{record.servicemanAccount,jdbcType=VARCHAR},
+        present_time = #{record.presentTime,jdbcType=TIMESTAMP},
+        repair_duration = #{record.repairDuration,jdbcType=VARCHAR},
+        repair_desc = #{record.repairDesc,jdbcType=VARCHAR},
+        repair_status = #{record.repairStatus,jdbcType=INTEGER},
+        create_time = #{record.createTime,jdbcType=TIMESTAMP},
+        create_by = #{record.createBy,jdbcType=VARCHAR},
+        update_time = #{record.updateTime,jdbcType=TIMESTAMP},
+        update_by = #{record.updateBy,jdbcType=VARCHAR}
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause"/>
+        </if>
+    </update>
+    <update id="updateByPrimaryKeySelective" parameterType="com.wtf.service.entity.po.RepairStatus">
+        update repair_status
+        <set>
+            <if test="repairOrder != null">
+                repair_order = #{repairOrder,jdbcType=VARCHAR},
+            </if>
+            <if test="servicemanAccount != null">
+                serviceman_account = #{servicemanAccount,jdbcType=VARCHAR},
+            </if>
+            <if test="presentTime != null">
+                present_time = #{presentTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="repairDuration != null">
+                repair_duration = #{repairDuration,jdbcType=VARCHAR},
+            </if>
+            <if test="repairDesc != null">
+                repair_desc = #{repairDesc,jdbcType=VARCHAR},
+            </if>
+            <if test="repairStatus != null">
+                repair_status = #{repairStatus,jdbcType=INTEGER},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="createBy != null">
+                create_by = #{createBy,jdbcType=VARCHAR},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateBy != null">
+                update_by = #{updateBy,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.wtf.service.entity.po.RepairStatus">
+        update repair_status
+        set repair_order = #{repairOrder,jdbcType=VARCHAR},
+        serviceman_account = #{servicemanAccount,jdbcType=VARCHAR},
+        present_time = #{presentTime,jdbcType=TIMESTAMP},
+        repair_duration = #{repairDuration,jdbcType=VARCHAR},
+        repair_desc = #{repairDesc,jdbcType=VARCHAR},
+        repair_status = #{repairStatus,jdbcType=INTEGER},
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+        create_by = #{createBy,jdbcType=VARCHAR},
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+        update_by = #{updateBy,jdbcType=VARCHAR}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+
+    <select id="getStatusCount" resultType="com.wtf.service.entity.vo.StatusCountVO">
+        SELECT serviceman_account as account,
+        count(*) as statusCount,
+        repair_status as status
+        from repair_status
+        <where>
+            <if test="status!=null and status!=0">
+                repair_status=#{status,jdbcType=INTEGER}
+            </if>
+        </where>
+        group by serviceman_account
+    </select>
+
+    <select id="getOrderByAccount" resultType="com.wtf.service.entity.vo.OrderVO">
+        select a.repair_order as repairOrder,
+        a.create_time as createTime,
+        b.account,
+        a.repair_status as status
+        from repair_status a
+        left join customer_repair_order b
+        on a.repair_order=b.repair_order
+        <if test="account!=null and account!=''">
+            <where>
+                b.account=#{account,jdbcType=VARCHAR}
+            </where>
+        </if>
+        order by a.create_time desc
+    </select>
+
+    <select id="getOrderByServiceman" resultType="com.wtf.service.entity.vo.OrderVO">
+        select a.repair_order as repairOrder,
+        a.create_time as createTime,
+        b.account,
+        a.repair_status as status,
+        b.address as address,
+        b.appoint_time as appointTime,
+        b.phone as appointPhone,
+        b.problem_desc as descC,
+        b.type as typeE
+        from repair_status a
+        left join customer_repair_order b
+        on a.repair_order=b.repair_order
+        <if test="account!=null and account!=''">
+            <where>
+                a.serviceman_account=#{account,jdbcType=VARCHAR}
+            </where>
+        </if>
+        order by a.create_time desc
+  </select>
+</mapper>
