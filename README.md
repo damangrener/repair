@@ -16,3 +16,6 @@
 |用户服务	|api-user	|9091|
 |订单服务|	api-service|	9092|
 |文章服务	|api-article|	9094|
+## 3.部分界面效果图
+![image](https://github.com/ReklFly/repair/blob/master/repair/img/%E5%AE%A2%E6%88%B7%E6%9F%A5%E7%9C%8B%E8%AE%A2%E5%8D%95%E7%8A%B6%E6%80%81.PNG)
+![image](https://github.com/ReklFly/repair/blob/master/repair/img/2.PNG)
