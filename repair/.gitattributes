@@ -1,0 +1,6 @@
+*.js linguist-language=java
+*.css linguist-language=java
+*.html linguist-language=java
+*.wxss linguist-language=java
+*.json linguist-language=java
+*.wxml linguist-language=java
