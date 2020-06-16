@@ -1,5 +1,6 @@
 # repair
 基于Spring Cloud的空调维修平台(前端小程序，毕设用，非实际项目)
+项目中的repairWx、repairAdmin、repairServiceMan是相同的，仅是为了项目展示。
 ## 1.平台环境
 小程序名称：WTF空调维修平台  
 面向用户：普通用户、平台管理员、空调维修工程师  
